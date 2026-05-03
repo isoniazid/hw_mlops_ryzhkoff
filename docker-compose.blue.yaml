@@ -1,0 +1,11 @@
+%%writefile docker-compose.blue.yaml
+version: '3.8'
+
+services:
+  app_blue:
+    image: ml-service:v1.0.0
+    container_name: app_blue
+    ports:
+      - "5001:5000"
+    environment:
+      - VERSION=v1.0.0

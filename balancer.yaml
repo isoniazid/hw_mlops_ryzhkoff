@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  nginx:
+    image: nginx:latest
+    container_name: nginx_lb
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    depends_on:
+      - app_blue
+      - app_green
+
+  app_blue:
+    image: ml-service:v1.0.0
+
+  app_green:
+    image: ml-service:v1.1.0
