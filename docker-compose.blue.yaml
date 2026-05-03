@@ -1,4 +1,3 @@
-%%writefile docker-compose.blue.yaml
 version: '3.8'
 
 services:
