@@ -1,0 +1,13 @@
+stages:
+  - build
+  - deploy
+
+build_model:
+  stage: build
+  script:
+    - echo "запускаем пайплайн..."
+    - python ml_pipeline.py
+
+  stage: deploy
+  script:
+    - echo "деплоим..."
